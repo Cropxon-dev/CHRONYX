@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CHRONYX Design System - Light Mode */
+    --background: 209 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 214 31% 91%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 216 19% 26%;
+    --primary-foreground: 210 19% 98%;
+
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 65%;
+    --muted-foreground: 222 47% 11%;
+
+    --accent: 210 40% 98%;
+    --accent-foreground: 215 16% 46%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 212 26% 83%;
+    --input: 212 26% 83%;
+    --ring: 216 19% 26%;
+
+    --radius: 0rem;
+
+    /* CHRONYX Custom Tokens */
+    --chronyx-accent: 230 25% 45%;
+    --chronyx-accent-soft: 230 20% 92%;
+    --chronyx-metric: 230 15% 15%;
+    --chronyx-success: 150 30% 45%;
+    --chronyx-warning: 35 70% 50%;
+    --chronyx-neutral: 230 10% 60%;
+    --chronyx-ring-track: 230 10% 90%;
+    --chronyx-ring-fill: 230 25% 45%;
+    --chronyx-gradient-start: 230 30% 96%;
+    --chronyx-gradient-end: 40 20% 97%;
+    --chronyx-flow-line: 230 15% 85%;
+
+    /* Legacy aliases for compatibility */
+    --vyom-accent: var(--chronyx-accent);
+    --vyom-accent-soft: var(--chronyx-accent-soft);
+    --vyom-metric: var(--chronyx-metric);
+    --vyom-success: var(--chronyx-success);
+    --vyom-warning: var(--chronyx-warning);
+    --vyom-neutral: var(--chronyx-neutral);
+    --vyom-ring-track: var(--chronyx-ring-track);
+    --vyom-ring-fill: var(--chronyx-ring-fill);
+    --vyom-gradient-start: var(--chronyx-gradient-start);
+    --vyom-gradient-end: var(--chronyx-gradient-end);
+    --vyom-flow-line: var(--chronyx-flow-line);
+
+    /* Landing Page Tokens - Light */
+    --chronyx-landing: 40 15% 98%;
+    --chronyx-landing-vignette: 230 10% 92% / 0.4;
+    --chronyx-landing-title: 220 15% 20%;
+    --chronyx-landing-tagline: 220 10% 45%;
+    --chronyx-landing-subtext: 220 8% 55%;
+    --chronyx-arc-stroke: 230 20% 40%;
+    --chronyx-landing-button-border: 220 10% 70%;
+    --chronyx-landing-button-text: 220 15% 25%;
+    --chronyx-landing-button-hover: 220 8% 95%;
+    --chronyx-landing-button-hover-border: 220 10% 60%;
+
+    /* Legacy aliases */
+    --vyom-landing: var(--chronyx-landing);
+    --vyom-landing-vignette: var(--chronyx-landing-vignette);
+    --vyom-landing-title: var(--chronyx-landing-title);
+    --vyom-landing-tagline: var(--chronyx-landing-tagline);
+    --vyom-landing-subtext: var(--chronyx-landing-subtext);
+    --vyom-arc-stroke: var(--chronyx-arc-stroke);
+    --vyom-landing-button-border: var(--chronyx-landing-button-border);
+    --vyom-landing-button-text: var(--chronyx-landing-button-text);
+    --vyom-landing-button-hover: var(--chronyx-landing-button-hover);
+    --vyom-landing-button-hover-border: var(--chronyx-landing-button-hover-border);
+
+    /* Sidebar */
+    --sidebar-background: 40 15% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 216 19% 26%;
+    --sidebar-primary-foreground: 210 19% 98%;
+    --sidebar-accent: 215 19% 34%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 212 26% 83%;
+    --sidebar-ring: 216 19% 26%;
+    --chart-1: 217 10% 64%;
+    --chart-2: 215 20% 65%;
+    --chart-3: 215 16% 46%;
+    --chart-4: 219 8% 46%;
+    --chart-5: 215 19% 34%;
+    --sidebar: 210 40% 98%;
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Crimson Pro', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 24% 26%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 212 26% 83%;
+    --primary-foreground: 228 84% 4%;
+
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 16% 46%;
+    --muted-foreground: 210 40% 98%;
+
+    --accent: 228 84% 4%;
+    --accent-foreground: 215 20% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 215 19% 34%;
+    --input: 215 19% 34%;
+    --ring: 212 26% 83%;
+
+    /* CHRONYX Custom Tokens - Dark */
+    --chronyx-accent: 230 20% 65%;
+    --chronyx-accent-soft: 230 15% 18%;
+    --chronyx-metric: 40 10% 95%;
+    --chronyx-success: 150 25% 55%;
+    --chronyx-warning: 35 60% 55%;
+    --chronyx-neutral: 230 10% 50%;
+    --chronyx-ring-track: 230 12% 20%;
+    --chronyx-ring-fill: 230 20% 60%;
+    --chronyx-gradient-start: 230 15% 8%;
+    --chronyx-gradient-end: 235 15% 10%;
+    --chronyx-flow-line: 230 12% 20%;
+
+    /* Legacy aliases for compatibility */
+    --vyom-accent: var(--chronyx-accent);
+    --vyom-accent-soft: var(--chronyx-accent-soft);
+    --vyom-metric: var(--chronyx-metric);
+    --vyom-success: var(--chronyx-success);
+    --vyom-warning: var(--chronyx-warning);
+    --vyom-neutral: var(--chronyx-neutral);
+    --vyom-ring-track: var(--chronyx-ring-track);
+    --vyom-ring-fill: var(--chronyx-ring-fill);
+    --vyom-gradient-start: var(--chronyx-gradient-start);
+    --vyom-gradient-end: var(--chronyx-gradient-end);
+    --vyom-flow-line: var(--chronyx-flow-line);
+
+    /* Landing Page Tokens - Dark */
+    --chronyx-landing: 230 15% 6%;
+    --chronyx-landing-vignette: 230 15% 4% / 0.5;
+    --chronyx-landing-title: 40 10% 88%;
+    --chronyx-landing-tagline: 40 8% 60%;
+    --chronyx-landing-subtext: 40 6% 50%;
+    --chronyx-arc-stroke: 230 15% 60%;
+    --chronyx-landing-button-border: 230 10% 40%;
+    --chronyx-landing-button-text: 40 10% 85%;
+    --chronyx-landing-button-hover: 230 12% 15%;
+    --chronyx-landing-button-hover-border: 230 10% 50%;
+
+    /* Legacy aliases */
+    --vyom-landing: var(--chronyx-landing);
+    --vyom-landing-vignette: var(--chronyx-landing-vignette);
+    --vyom-landing-title: var(--chronyx-landing-title);
+    --vyom-landing-tagline: var(--chronyx-landing-tagline);
+    --vyom-landing-subtext: var(--chronyx-landing-subtext);
+    --vyom-arc-stroke: var(--chronyx-arc-stroke);
+    --vyom-landing-button-border: var(--chronyx-landing-button-border);
+    --vyom-landing-button-text: var(--chronyx-landing-button-text);
+    --vyom-landing-button-hover: var(--chronyx-landing-button-hover);
+    --vyom-landing-button-hover-border: var(--chronyx-landing-button-hover-border);
+
+    /* Sidebar - Dark */
+    --sidebar-background: 230 15% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 212 26% 83%;
+    --sidebar-primary-foreground: 228 84% 4%;
+    --sidebar-accent: 215 20% 65%;
+    --sidebar-accent-foreground: 228 84% 4%;
+    --sidebar-border: 215 19% 34%;
+    --sidebar-ring: 212 26% 83%;
+    --chart-1: 215 12% 83%;
+    --chart-2: 212 26% 83%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 217 10% 64%;
+    --chart-5: 215 16% 46%;
+    --sidebar: 217 32% 17%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  /* CHRONYX Landing Page Styles */
+  .bg-chronyx-landing {
+    background-color: hsl(var(--chronyx-landing));
+  }
+
+  .text-chronyx-landing-title {
+    color: hsl(var(--chronyx-landing-title));
+  }
+
+  .text-chronyx-landing-tagline {
+    color: hsl(var(--chronyx-landing-tagline));
+  }
+
+  .text-chronyx-landing-subtext {
+    color: hsl(var(--chronyx-landing-subtext));
+    opacity: 0.6;
+  }
+
+  .border-chronyx-landing-button-border {
+    border-color: hsl(var(--chronyx-landing-button-border));
+  }
+
+  .text-chronyx-landing-button-text {
+    color: hsl(var(--chronyx-landing-button-text));
+  }
+
+  .hover\:bg-chronyx-landing-button-hover:hover {
+    background-color: hsl(var(--chronyx-landing-button-hover));
+  }
+
+  .hover\:border-chronyx-landing-button-hover-border:hover {
+    border-color: hsl(var(--chronyx-landing-button-hover-border));
+  }
+
+  /* Legacy aliases for VYOM styles */
+  .bg-vyom-landing {
+    background-color: hsl(var(--chronyx-landing));
+  }
+
+  .text-vyom-landing-title {
+    color: hsl(var(--chronyx-landing-title));
+  }
+
+  .text-vyom-landing-tagline {
+    color: hsl(var(--chronyx-landing-tagline));
+  }
+
+  /* CHRONYX Ring Animation - 90 seconds for meditative rotation */
+  .chronyx-ring-rotate {
+    animation: chronyxRingRotate 90s linear infinite;
+  }
+
+  @keyframes chronyxRingRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Rotating Arc Animation - 75 seconds for one full rotation */
+  .vyom-arc-rotate {
+    animation: vyomArcRotate 75s linear infinite;
+  }
+
+  @keyframes vyomArcRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* VYOM Animations */
+  .vyom-fade-in {
+    animation: vyomFadeIn 0.8s ease-out forwards;
+  }
+
+  .vyom-fade-in-delayed {
+    animation: vyomFadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .vyom-fade-in-delayed-2 {
+    animation: vyomFadeIn 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .vyom-ring-animate {
+    animation: vyomRingFill 3s ease-out forwards;
+  }
+
+  .vyom-flow-line {
+    animation: vyomFlowLine 20s linear infinite;
+  }
+
+  .vyom-flow-line-2 {
+    animation: vyomFlowLine 25s linear infinite 5s;
+  }
+
+  .vyom-flow-line-3 {
+    animation: vyomFlowLine 22s linear infinite 10s;
+  }
+
+  /* Ring Slow Rotation - 90 seconds counter-clockwise */
+  .vyom-ring-slow-rotate {
+    animation: vyomRingSlowRotate 90s linear infinite;
+  }
+
+  @keyframes vyomRingSlowRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  /* Ring Fill Animation - Subtle pulse */
+  .vyom-ring-fill-animate {
+    animation: vyomRingFillPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes vyomRingFillPulse {
+    0%, 100% {
+      stroke-dashoffset: 0;
+      opacity: 0.05;
+    }
+    50% {
+      stroke-dashoffset: -50;
+      opacity: 0.08;
+    }
+  }
+
+  /* Metric Card Styling */
+  .vyom-metric-value {
+    @apply text-4xl font-semibold tracking-tight;
+    color: hsl(var(--vyom-metric));
+  }
+
+  .vyom-metric-label {
+    @apply text-sm font-medium tracking-wide uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Progress Ring */
+  .vyom-ring-track {
+    stroke: hsl(var(--vyom-ring-track));
+  }
+
+  .vyom-ring-fill {
+    stroke: hsl(var(--vyom-ring-fill));
+  }
+
+  /* Gradient Background */
+  .vyom-gradient-bg {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--vyom-gradient-start)) 0%,
+      hsl(var(--vyom-gradient-end)) 100%
+    );
+  }
+
+  /* Flow Lines */
+  .vyom-flow-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .vyom-flow {
+    position: absolute;
+    height: 1px;
+    width: 200px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--vyom-flow-line)) 50%,
+      transparent 100%
+    );
+    opacity: 0.4;
+  }
+
+  /* Sketch-style animations for landing */
+  .sketch-element {
+    animation: sketchFloat 8s ease-in-out infinite;
+  }
+
+  .sketch-float {
+    animation: sketchFloat 6s ease-in-out infinite;
+  }
+
+  .sketch-rotate {
+    animation: sketchRotate 20s linear infinite;
+  }
+
+  .sketch-draw {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: sketchDraw 2s ease-out forwards 0.5s;
+  }
+
+  @keyframes sketchFloat {
+    0%, 100% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-8px); opacity: 0.6; }
+  }
+
+  @keyframes sketchRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes sketchDraw {
+    to { stroke-dashoffset: 0; }
+  }
+}
+
+@layer utilities {
+  @keyframes vyomFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes vyomRingFill {
+    from {
+      stroke-dashoffset: 283;
+    }
+  }
+
+  @keyframes vyomFlowLine {
+    from {
+      transform: translateX(-200px);
+    }
+    to {
+      transform: translateX(calc(100vw + 200px));
+    }
+  }
+
+  /* Scrollbar Styling */
+  .vyom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .vyom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .vyom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  .vyom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}

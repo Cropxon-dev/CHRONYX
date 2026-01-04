@@ -1,0 +1,46 @@
+project_id = "ewevnteuyfpinnlhvoty"
+
+[functions.send-email-otp]
+verify_jwt = false
+
+[functions.send-sms-otp]
+verify_jwt = false
+
+[functions.generate-emi-schedule]
+verify_jwt = false
+
+[functions.mark-emi-paid]
+verify_jwt = false
+
+[functions.apply-part-payment]
+verify_jwt = false
+
+[functions.apply-foreclosure]
+verify_jwt = false
+
+[functions.recalc-loan-summary]
+verify_jwt = false
+
+[functions.send-emi-reminders]
+verify_jwt = false
+
+[functions.send-insurance-reminders]
+verify_jwt = false
+
+[functions.auto-link-insurance-expense]
+verify_jwt = false
+
+[functions.send-welcome-email]
+verify_jwt = false
+
+[functions.check-social-profiles]
+verify_jwt = false
+
+[functions.create-razorpay-order]
+verify_jwt = false
+
+[functions.verify-razorpay-payment]
+verify_jwt = false
+
+[functions.send-payment-receipt]
+verify_jwt = false

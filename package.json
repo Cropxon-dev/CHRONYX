@@ -1,0 +1,8 @@
+{
+  "name": "chronyx",
+  "private": true,
+  "workspaces": [
+    "chronyx-web",
+    "chronyx-desktop"
+  ]
+}
