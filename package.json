@@ -4,5 +4,8 @@
   "workspaces": [
     "chronyx-web",
     "chronyx-desktop"
-  ]
+  ],
+  "engines": {
+    "node": ">=20"
+  }
 }
