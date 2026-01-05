@@ -65,7 +65,16 @@ const handler = async (req: Request): Promise<Response> => {
       }),
     });
 
-    const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+    const supabase = createClient(
+        Deno.env.get("SUPABASE_URL")!,
+        Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+        {
+        db: {
+          schema: 'api' //-> for API Schema
+        }
+      }
+    
+      );
     await supabase.from('payment_history').update({ receipt_sent: true, receipt_sent_at: new Date().toISOString() }).eq('id', payment_history_id);
 
     return new Response(JSON.stringify({ success: true }), { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } });

@@ -1,4 +1,4 @@
-project_id = "ewevnteuyfpinnlhvoty"
+project_id = "ehuawxhbeyvdvhfbbzwc"
 
 [functions.send-email-otp]
 verify_jwt = false
