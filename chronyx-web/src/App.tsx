@@ -36,6 +36,8 @@ import Backup from "./pages/app/Backup";
 import Documents from "./pages/app/Documents";
 import Social from "./pages/app/Social";
 import NotFound from "./pages/NotFound";
+import AuthCallback from "./pages/auth/AuthCallback";
+
 
 const queryClient = new QueryClient();
 
@@ -67,6 +69,15 @@ const AnimatedRoutes = () => {
               <Login />
             </motion.div>
           } 
+        />
+        {/* 👇 ADD THIS */}
+        <Route 
+          path="/auth/callback"
+          element={
+            <motion.div {...pageTransition}>
+              <AuthCallback />
+            </motion.div>
+          }
         />
         <Route 
           path="/privacy" 

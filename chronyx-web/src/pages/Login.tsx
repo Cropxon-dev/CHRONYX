@@ -54,7 +54,7 @@ const Login = () => {
         } else {
           toast({
             title: "Welcome to CHRONYX",
-            description: "Your account has been created.",
+            description: "Your account has been created. But Before SignIn Please Check your Mail Inbox/spam and verify the link to login",
           });
           navigate(from, { replace: true });
         }
