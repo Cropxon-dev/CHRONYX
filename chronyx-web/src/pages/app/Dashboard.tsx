@@ -15,6 +15,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useOnboarding } from "@/hooks/useOnboarding";
 import { format, subDays, startOfWeek, addDays, parseISO, formatDistanceToNow } from "date-fns";
 
+import AppLayout from "./AppLayout";
+
 const Dashboard = () => {
   const { user } = useAuth();
   const { showOnboarding, isLoading: onboardingLoading, completeOnboarding } = useOnboarding();
@@ -175,17 +177,24 @@ const Dashboard = () => {
 
   if (loading || onboardingLoading) {
     return (
+      <AppLayout>
       <div className="flex items-center justify-center h-64">
         <div className="text-muted-foreground">Loading...</div>
       </div>
+      </AppLayout>
     );
   }
 
-  if (showOnboarding) {
-    return <OnboardingFlow onComplete={completeOnboarding} />;
+ if (showOnboarding) {
+    return (
+      <AppLayout>
+        <OnboardingFlow onComplete={completeOnboarding} />
+      </AppLayout>
+    );
   }
 
   return (
+      <AppLayout>
     <div className="space-y-8 animate-fade-in">
       {/* Header */}
       <header>
@@ -288,6 +297,7 @@ const Dashboard = () => {
         </div>
       </section>
     </div>
+  </AppLayout>
   );
 };
 

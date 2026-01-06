@@ -500,7 +500,7 @@ const AppSidebar = () => {
       {/* Mobile Header */}
       <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-sidebar border-b border-sidebar-border flex items-center justify-between px-4 z-40">
         <Link to="/app" className="text-lg font-light tracking-[0.2em] text-sidebar-foreground">
-          VYOM
+          CHRONYX
         </Link>
         <Button
           variant="ghost"

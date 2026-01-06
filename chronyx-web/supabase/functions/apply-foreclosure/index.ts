@@ -24,11 +24,7 @@ Deno.serve(async (req) => {
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
-       {
-        db: {
-          schema: 'api' //-> for API Schema
-        }
-      }
+      
     );
 
     const body: ForeclosureRequest = await req.json();
